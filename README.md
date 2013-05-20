@@ -1,5 +1,7 @@
 # Pretty Github Chrome Extension
 
+[![Dependency Status](https://gemnasium.com/akatov/pretty-github.png)](https://gemnasium.com/akatov/pretty-github)
+
 A prettifier for source code on github, along the lines of
 [pretty-mode-plus](https://github.com/akatov/pretty-mode-plus).
 
