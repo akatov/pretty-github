@@ -7,6 +7,8 @@ A prettifier for source code on github, along the lines of
 
 ## Installation
 
+This extension requires [node](https://github.com/joyent/node) v0.8 or later.
+
 ```bash
 git clone git@github.com:akatov/pretty-github.git
 cd pretty-github
@@ -37,6 +39,3 @@ ENV=production grunt build
 * Commit your changes (`git commit -am 'Added some feature'`)
 * Push to the branch (`git push origin my-new-feature`)
 * Create new Pull Request
-
-
-
