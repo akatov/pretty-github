@@ -4,7 +4,11 @@ module.exports = (grunt) ->
 
   prod = if tusk.env.current == 'production' then true else false
 
-  tusk.coffee.add 'pretty.js', ['app/coffee/pretty.coffee'], wrap: null
+  tusk.coffee.add 'pretty.js', [
+    'app/coffee/init.coffee'
+    'app/coffee/coffeescript.coffee'
+    'app/coffee/pretty.coffee'
+  ], wrap: null
   tusk.uglify.add 'pretty.js', ['pretty.js'] if prod
   tusk.copy.add '', 'app/images'
   tusk.copy.add '', 'app/lib'
