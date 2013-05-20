@@ -1,6 +1,6 @@
 # Pretty Github Chrome Extension
 
-[![Dependency Status](https://gemnasium.com/akatov/pretty-github.png)](https://gemnasium.com/akatov/pretty-github)
+[![Dependency Status](https://gemnasium.com/akatov/pretty-github.png)](https://gemnasium.com/akatov/pretty-github) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akatov/pretty-github/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 A prettifier for source code on github, along the lines of
 [pretty-mode-plus](https://github.com/akatov/pretty-mode-plus).
@@ -39,5 +39,4 @@ ENV=production grunt build
 * Create new Pull Request
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akatov/pretty-github/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
