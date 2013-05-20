@@ -4,10 +4,10 @@ module.exports = (grunt) ->
 
   prod = if tusk.env.current == 'production' then true else false
 
-  tusk.coffee.add 'app.js', ['app/coffee/**/*.coffee'], wrap: null
-  tusk.uglify.add 'app.js', ['app.js'] if prod
-  tusk.jade.add '', 'app/pages'
+  tusk.coffee.add 'pretty.js', ['app/coffee/pretty.coffee'], wrap: null
+  tusk.uglify.add 'pretty.js', ['pretty.js'] if prod
   tusk.copy.add '', 'app/images'
+  tusk.copy.add '', 'app/lib'
 
   (yaml_config = {})[tusk.env.current] =
     options:
