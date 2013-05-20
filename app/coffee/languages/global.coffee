@@ -1,10 +1,4 @@
-language_substitutions['coffeescript'] =
-  'k': (src) -> src
-    .replace(/^in$/, (m) -> tooltip('&isin;', m) ) # ∈
-    .replace(/^for$/, (m) -> tooltip('&forall;', m) ) # ∀
-  'kc': (src) -> src
-    .replace(/^null$/, (m) -> tooltip('&empty;', m) ) # ∅
-    .replace(/^undefined$/, (m) -> tooltip('&#x22A5;', m) ) # ⊥
+language_substitutions['global'] =
   'nf': (src) -> src
     .replace(/-&gt;$/, (m) -> tooltip('&rarr;', m) ) # →
     .replace(/\=&gt;$/, (m) -> tooltip('&rArr;', m) ) # ⇒
@@ -16,7 +10,9 @@ language_substitutions['coffeescript'] =
     .replace(/^&gt;=$/, (m) -> tooltip('&ge;', m) ) # ≥
     .replace(/^&lt;=$/, (m) -> tooltip('&le;', m) ) # ≤
     .replace(/^!=$/, (m) -> tooltip('&ne;', m) ) # ≠
+    .replace(/^!==$/, (m) -> tooltip('&ne;', m) ) # ≠
     .replace(/^==$/, (m) -> tooltip('&#x2a75;', m) ) # ⩵
+    .replace(/^===$/, (m) -> tooltip('&#x2a76;', m) ) # ⩶
     .replace(/^\+\+==$/, (m) -> tooltip('&#x29fa;==', m) ) # ⧺==
     .replace(/^\+\+$/, (m) -> tooltip('&#x29fa;', m) ) # ⧺
     .replace(/&lt;&lt;$/, (m) -> tooltip('&#x226a;', m) ) # ≪

@@ -1,7 +1,10 @@
 $ ->
   setTimeout () ->
     for language, replace_patterns of language_substitutions
-      lang_selector = ".type-#{language} pre"
+      if language == 'global'
+        lang_selector = ".file pre"
+      else
+        lang_selector = ".type-#{language} pre"
       # console.log lang_selector
       source = $ lang_selector
       # console.log source
