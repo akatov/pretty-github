@@ -9,6 +9,7 @@ module.exports = (grunt) ->
     'app/coffee/helpers.coffee'
     'app/coffee/languages/global.coffee'
     'app/coffee/languages/coffeescript.coffee'
+    'app/coffee/languages/javascript.coffee'
     'app/coffee/pretty.coffee'
   ], wrap: null
   tusk.uglify.add 'pretty.js', ['pretty.js'] if prod
