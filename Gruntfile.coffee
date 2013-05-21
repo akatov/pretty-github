@@ -7,7 +7,6 @@ module.exports = (grunt) ->
   tusk.coffee.add 'pretty.js', [
     'app/coffee/init.coffee'
     'app/coffee/helpers.coffee'
-    'app/coffee/languages/global.coffee'
     'app/coffee/languages/coffeescript.coffee'
     'app/coffee/languages/javascript.coffee'
     'app/coffee/pretty.coffee'
