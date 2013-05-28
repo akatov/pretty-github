@@ -1,12 +1,17 @@
+languages = [
+  'coffeescript'
+  'javascript'
+]
+
 $ ->
   setTimeout () ->
-    for language, replace_patterns of language_substitutions
+    for language in languages
       lang_selector = ".type-#{language} pre"
-      # console.log lang_selector
       source = $ lang_selector
-      # console.log source
       if source.length > 0
-        for selector, replace_function of replace_patterns
-          $("#{lang_selector} span.#{selector}").html (i, src) ->
-            replace_function src
+        for pattern_type, display_types of mapping[language]
+          for dt in display_types
+            for selector, replace_function of patterns[pattern_type][dt]
+              $("#{lang_selector} span.#{selector}").html (i, src) ->
+                replace_function src
   , 500
