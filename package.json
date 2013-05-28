@@ -1,6 +1,7 @@
 { "name": "pretty-github"
 , "version": "0.0.0"
-, "description": "Chrome Extension Template using grunt-tusk"
+, "description": "Github source code prettifying Chrome extension"
+, "homepage": "https://github.com/akatov/pretty-github"
 , "repository":
   { "type": "git"
   , "url": "https://github.com/akatov/pretty-github.git"
@@ -8,7 +9,10 @@
   [ "Github"
   , "Pretty"
   ]
-, "author": "Dmitri Akatov"
+, "author": "Dmitri Akatov <akatov@gmail.com> (http://akatov.com/)"
+, "contributors":
+  [ "Alex Nisnevich"
+  ]
 , "license": "BSD"
 , "devDependencies":
   { "grunt": "~0.4.1"
