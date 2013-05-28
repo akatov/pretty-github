@@ -4,3 +4,8 @@ patterns['logic_words'] =
       .replace(/^and$/, (m) -> tooltip('&and;', m) ) # ∧
       .replace(/^or$/, (m) -> tooltip('&or;', m) ) # ∨
       .replace(/^not$/, (m) -> tooltip('&not;', m) ) # ¬
+  ow:
+    ow: (src) -> src
+      .replace(/^and$/, (m) -> tooltip('&and;', m) ) # ∧
+      .replace(/^or$/, (m) -> tooltip('&or;', m) ) # ∨
+      .replace(/^not$/, (m) -> tooltip('&not;', m) ) # ¬

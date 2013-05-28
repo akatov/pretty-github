@@ -16,8 +16,9 @@ module.exports = (grunt) ->
     'app/coffee/patterns/undefined.coffee'
     'app/coffee/patterns/arithmetic.coffee'
     'app/coffee/patterns/punctuation.coffee'
-    'app/coffee/patterns/logic_words.coffee'
+    'app/coffee/patterns/lambda.coffee'
     'app/coffee/patterns/logic_symbols.coffee'
+    'app/coffee/patterns/logic_words.coffee'
     'app/coffee/pretty.coffee'
   ], wrap: null
   tusk.uglify.add 'pretty.js', ['pretty.js'] if prod

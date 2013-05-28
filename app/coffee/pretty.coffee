@@ -1,6 +1,7 @@
 languages = [
-  'coffeescript'
   'javascript'
+  'ruby'
+  'coffeescript'
 ]
 
 $ ->
