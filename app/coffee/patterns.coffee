@@ -17,7 +17,7 @@ patterns =
     .replace(/\=\=$/, (m) -> tooltip('&#x2a75;', m) ) # ⩵
   equality_triple: (src) -> src
     # how to deal with the following special case?
-    # .replace(/^!==$/, (m) -> tooltip('&ne;', m) ) # ≠ 
+    .replace(/^!==$/, (m) -> tooltip('&ne;&ne;', m) ) # ≠≠
     .replace(/^===$/, (m) -> tooltip('&#x2a76;', m) ) # ⩶
   equality_approximately: (src) -> src
     .replace(/^=\~$/, (m) -> tooltip('&#x2245;', m) ) # ≅

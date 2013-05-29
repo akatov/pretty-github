@@ -6,7 +6,7 @@ mapping =
     bitshift_double: ['o']
     equality_triple: ['o']
     equality: ['o']
-    function: ['o']
+    function: ['kd']
     logic_symbols: ['o']
     null: ['kc']
     ordering: ['o']
