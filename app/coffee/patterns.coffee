@@ -54,3 +54,4 @@ common =
   logic_symbols: names ['&&', '||', '!']
   logic_words: names ['and', 'or', 'not']
   ordering: names ['>=', '<=']
+  null: names ['null']

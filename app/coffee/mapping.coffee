@@ -6,7 +6,7 @@ mapping =
     equality: o: common.equality_triple.concat common.equality.concat
     function: kd: names ['function']
     # logic: o: common.logic_symbols
-    null: kc: names ['null']
+    null: kc: common.null
     ordering: o: common.ordering
     sets: k: names ['in']
     'undefined': kc: names ['undefined']
@@ -20,13 +20,12 @@ mapping =
     nil: kp: names ['nil']
     ordering: o: (names ['<=>']).concat common.ordering
     punctuation: o: names ['...', '..', '::'] # TODO: fix this
-  # java:
-  #   arithmetic: ['o']
-  #   bitshift_triple: ['o']
-  #   bitshift_double: ['o']
-  #   equality: ['o']
-  #   null: ['o']
-  #   ordering: ['o']
+  java:
+    arithmetic: o: names ['++']
+    bitshift: o: common.bitshift
+    equality: o: common.equality
+    null: kc: common.null
+    ordering: o: common.ordering
 
   # python:
   # shell:
@@ -52,7 +51,7 @@ mapping =
     logic:
       o: common.logic_words
       ow: common.logic_words
-    null: kc: names ['null']
+    null: kc: common.null
     ordering: o: common.ordering
     punctuation:
       o: names ['::']
@@ -76,7 +75,36 @@ mapping =
     punctuation: o: names ['...']
     nil: kc: names ['nil']
   # groovy:
-  # haskell:
+  haskell:
+    arithmetic: n: [
+      [/^sqrt$/, '&radic;']
+      [/^product$/, '&#x220f;']
+      [/^sum/, '&#x2211;']
+    ]
+    arrows: ow: names ['<-', '->', '=>']
+    equality: o:
+      names(['==']).concat [[/^\/=$/, '&ne;']]
+    logic: n: [
+      patterns['not']
+      [/^and$/, '&#x22c0;']
+      [/^or$/, '&#x22c1;']
+    ]
+    ordering: o: common.ordering
+    unit: nb: [/^\(\)$/, '&empty;'] # ∅
+    punctuation:
+      o: [
+        patterns['..']
+        [/^\.$/, '&#x2218;']
+        [/^!!$/, '&#x203c;']
+      ]
+      ow: names ['::']
+    lists:
+      # n: # TODO: [`elem`, `intersect`, `union`]
+      o: [
+        patterns['++']
+        [/^\\\\$/, '&#x29f5;']
+      ]
+    'undefined': n: names ['undefined']
   # lua:
   # ocaml:
   # prolog:
