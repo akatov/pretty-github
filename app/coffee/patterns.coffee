@@ -1,52 +1,56 @@
 patterns =
-  arithmetic: (src) -> src
-    .replace(/^\+\+/, (m) -> tooltip('&#x29fa;', m) ) # ⧺
-  arrows_single: (src) -> src
-    .replace(/-&gt;$/, (m) -> tooltip('&rarr;', m) ) # →
-  arrows_double: (src) -> src
-    .replace(/\=&gt;$/, (m) -> tooltip('&rArr;', m) ) # ⇒
-  bitshift_double: (src) -> src
-    .replace(/&lt;&lt;$/, (m) -> tooltip('&#x226a;', m) ) # ≪
-    .replace(/&gt;&gt;$/, (m) -> tooltip('&#x226b;', m) ) # ≫
-  bitshift_triple: (src) -> src
-    .replace(/&gt;&gt;&gt;$/, (m) -> tooltip('&#x22d9;', m) ) # ⋙
-  comparison: (src) -> src
-    .replace(/^&lt;=&gt;$/, (m) -> tooltip('&#x2A8B;', m) ) # ⪋
-  equality: (src) -> src
-    .replace(/^!=$/, (m) -> tooltip('&ne;', m) ) # ≠
-    .replace(/\=\=$/, (m) -> tooltip('&#x2a75;', m) ) # ⩵
-  equality_triple: (src) -> src
-    # how to deal with the following special case?
-    .replace(/^!==$/, (m) -> tooltip('&ne;&ne;', m) ) # ≠≠
-    .replace(/^===$/, (m) -> tooltip('&#x2a76;', m) ) # ⩶
-  equality_approximately: (src) -> src
-    .replace(/^=\~$/, (m) -> tooltip('&#x2245;', m) ) # ≅
-    .replace(/^!\~$/, (m) -> tooltip('&#x2247;', m) ) # ≇
-  function: (src) -> src
-    .replace(/^function/, (m) -> tooltip('&lambda;', m) ) # λ
-  lambda: (src) -> src
-    .replace(/^lambda$/, (m) -> tooltip('&lambda;', m) ) # λ
-  logic_symbols: (src) -> src
-    .replace(/^&amp;&amp;$/, (m) -> tooltip('&and;', m) ) # ∧
-    .replace(/^\|\|$/, (m) -> tooltip('&or;', m) ) # ∨
-    .replace(/^!$/, (m) -> tooltip('&not;', m) ) # ¬
-  logic_words: (src) -> src
-    .replace(/^and$/, (m) -> tooltip('&and;', m) ) # ∧
-    .replace(/^or$/, (m) -> tooltip('&or;', m) ) # ∨
-    .replace(/^not$/, (m) -> tooltip('&not;', m) ) # ¬
-  nil: (src) -> src
-    .replace(/^nil$/, (m) -> tooltip('&empty;', m) ) # ∅
-  null: (src) -> src
-    .replace(/^null$/, (m) -> tooltip('&empty;', m) ) # ∅
-  ordering: (src) -> src
-    .replace(/^&gt;=$/, (m) -> tooltip('&ge;', m) ) # ≥
-    .replace(/^&lt;=$/, (m) -> tooltip('&le;', m) ) # ≤
-  punctuation_dots: (src) -> src
-    .replace(/^(\)?)\.\.\.(\(?)$/, (m, a, b) -> a + tooltip('&#x2026;', m) + b) # …
-    .replace(/^(\)?)\.\.(\(?)$/, (m, a, b) -> a + tooltip('&#x2025;', m) + b) # ‥
-  punctuation_colons: (src) -> src
-    .replace(/\:\:/, (m) -> tooltip('&#x2237;', m) ) # ∷
-  sets_in: (src) -> src
-    .replace(/^in$/, (m) -> tooltip('&isin;', m) ) # ∈
-  undefined: (src) -> src
-    .replace(/^undefined$/, (m) -> tooltip('&#x22A5;', m) ) # ⊥
+  # arithmetic
+  '++': [/^\+\+/, '&#x29fa;'] # ⧺
+  # arrows
+  '->': [/-&gt;$/, '&rarr;'] # →
+  '->>': [/-&gt;&gt;$/, '&rarr;'] # → # TODO!
+  '<-': [/&lt;-$/, '&larr;'] # ←
+  '=>': [/\=&gt;$/, '&rArr;'] # ⇒
+  # ordering
+  '<<': [/&lt;&lt;$/, '&#x226a;'] # ≪
+  '>>': [/&gt;&gt;$/, '&#x226b;'] # ≫
+  '>>>': [/&gt;&gt;&gt;$/, '&#x22d9;'] # ⋙
+  '<<<': [/&lt;&lt;&lt;$/, '&#x22d9;'] # ⋘
+  '<=>': [/^&lt;=&gt;$/, '&#x2A8B;'] # ⪋
+  '>=': [/^&gt;=$/, '&ge;'] # ≥
+  '<=': [/^&lt;=$/, '&le;'] # ≤
+  # equality
+  ':=': [/^:=$/, '&#x2254;'] # ≔
+  '!=': [/^!=$/, '&ne;'] # ≠
+  '==': [/\=\=$/, '&#x2a75;'] # ⩵
+  '!==': [/^!==$/, '&ne;&ne;'] # ≠≠
+  '===': [/^===$/, '&#x2a76;'] # ⩶
+  '=~': [/^=\~$/, '&#x2245;'] # ≅
+  '!~': [/^!\~$/, '&#x2247;'] # ≇
+  # function
+  function: [/^function/, '&lambda;'] # λ
+  lambda: [/^lambda$/, '&lambda;'] # λ
+  # logic
+  '&&': [/^&amp;&amp;$/, '&and;'] # ∧
+  '||': [/^\|\|$/, '&or;'] # ∨
+  '!': [/^!$/, '&not;'] # ¬
+  and: [/^and$/, '&and;'] # ∧
+  or: [/^or$/, '&or;'] # ∨
+  not: [/^not$/, '&not;'] # ¬
+  # constants
+  nil: [/^nil$/, '&empty;'] # ∅
+  null: [/^null$/, '&empty;'] # ∅
+  'undefined': [/^undefined$/, '&#x22A5;'] # ⊥
+  # punctuation
+  '...': [/^(\)?)\.\.\.(\(?)$/, '&#x2026;'] # …
+  '..': [/^(\)?)\.\.(\(?)$/, '&#x2025;'] # ‥
+  '::': [/\:\:/, '&#x2237;'] # ∷
+  # sets
+  in: [/^in$/, '&isin;'] # ∈
+
+# converts a list of names to a list of pattern/glyph pairs
+names = (ps) -> _.map(ps, (p) -> patterns[p])
+
+# groups shared amongst many languages
+common =
+  bitshift: names ['>>>', '<<', '>>']
+  equality: names ['==', '!=']
+  equality_triple: names ['===', '!==']
+  logic_symbols: names ['&&', '||', '!']
+  logic_words: names ['and', 'or', 'not']
+  ordering: names ['>=', '<=']

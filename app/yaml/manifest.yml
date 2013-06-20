@@ -7,4 +7,5 @@ content_scripts:
       - https://*.github.com/*
     js:
       - jquery.min.js
+      - lodash.min.js
       - javascripts/pretty.js
