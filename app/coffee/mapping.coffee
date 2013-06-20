@@ -78,31 +78,36 @@ mapping =
   haskell:
     arithmetic: n: [
       [/^sqrt$/, '&radic;']
-      [/^product$/, '&#x220f;']
-      [/^sum/, '&#x2211;']
+      [/^product$/, '&prod;']
+      [/^sum/, '&sum;']
     ]
     arrows: ow: names ['<-', '->', '=>']
     equality: o:
       names(['==']).concat [[/^\/=$/, '&ne;']]
     logic: n: [
       patterns['not']
-      [/^and$/, '&#x22c0;']
-      [/^or$/, '&#x22c1;']
+      [/^and$/, '&Wedge;']
+      [/^or$/, '&Vee;']
     ]
     ordering: o: common.ordering
     unit: nb: [/^\(\)$/, '&empty;'] # ∅
     punctuation:
       o: [
         patterns['..']
-        [/^\.$/, '&#x2218;']
+        [/^\.$/, '&compfn;']
         [/^!!$/, '&#x203c;']
       ]
       ow: names ['::']
     lists:
-      # n: # TODO: [`elem`, `intersect`, `union`]
+      n: [
+        [/^`elem`$/, '&in;']
+        [/^`intersect`$/, '&cap;']
+        [/^`union`$/, '&cup;']
+      ]
       o: [
         patterns['++']
-        [/^\\\\$/, '&#x29f5;']
+        # [/^\\\\$/, '&#x29f5;']
+        [/^\\\\$/, '&setmn;']
       ]
     'undefined': n: names ['undefined']
   # lua:

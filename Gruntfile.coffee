@@ -5,7 +5,7 @@ module.exports = (grunt) ->
   prod = if tusk.env.current == 'production' then true else false
 
   tusk.coffee.add 'pretty.js', [
-    'app/coffee/helpers.coffee'
+    'app/coffee/preprocess.coffee'
     'app/coffee/patterns.coffee'
     'app/coffee/mapping.coffee'
     'app/coffee/pretty.coffee'
