@@ -3,7 +3,7 @@ mapping =
   javascript:
     arithmetic: o: names ['++']
     bitshift: o: common.bitshift
-    equality: o: common.equality_triple.concat common.equality.concat
+    equality: o: common.equality_triple.concat common.equality
     function: kd: names ['function']
     # logic: o: common.logic_symbols
     null: kc: common.null

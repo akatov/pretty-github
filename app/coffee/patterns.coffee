@@ -1,13 +1,13 @@
 patterns =
-  # arithmetic
+  ## arithmetic
   '++': [/^\+\+/, '&#x29fa;'] # ⧺
-  # arrows
+  ## arrows
   '->': [/-&gt;$/, '&rarr;'] # →
   '->>': [/-&gt;&gt;$/, '&Rarr;'] # → # TODO!
   '<-': [/&lt;-$/, '&larr;'] # ←
   '<<-': [/&lt;-$/, '&Larr;'] # ←
   '=>': [/\=&gt;$/, '&rArr;'] # ⇒
-  # ordering
+  ## ordering
   '<<': [/&lt;&lt;$/, '&Lt;'] # ≪
   '>>': [/&gt;&gt;$/, '&Gt;'] # ≫
   '>>>': [/&gt;&gt;&gt;$/, '&Gg;'] # ⋙
@@ -15,33 +15,34 @@ patterns =
   '<=>': [/^&lt;=&gt;$/, '&leg;'] # ⋚
   '>=': [/^&gt;=$/, '&ge;'] # ≥
   '<=': [/^&lt;=$/, '&le;'] # ≤
-  # equality
+  ## equality
   ':=': [/^:=$/, '&colone;'] # ≔
   '!=': [/^!=$/, '&ne;'] # ≠
   '==': [/\=\=$/, '&#x2a75;'] # ⩵
   '!==': [/^!==$/, '&ne;&ne;'] # ≠≠
+  # '!==': [/^!==$/, '&nequiv;']
   '===': [/^===$/, '&#x2a76;'] # ⩶
   '=~': [/^=\~$/, '&cong;'] # ≅
   '!~': [/^!\~$/, '&ncong;'] # ≇
-  # function
+  ## function
   function: [/^function/, '&lambda;'] # λ
   lambda: [/^lambda$/, '&lambda;'] # λ
-  # logic
+  ## logic
   '&&': [/^&amp;&amp;$/, '&and;'] # ∧
   '||': [/^\|\|$/, '&or;'] # ∨
   '!': [/^!$/, '&not;'] # ¬
   and: [/^and$/, '&and;'] # ∧
   or: [/^or$/, '&or;'] # ∨
   not: [/^not$/, '&not;'] # ¬
-  # constants
+  ## constants
   nil: [/^nil$/, '&empty;'] # ∅
   null: [/^null$/, '&empty;'] # ∅
   'undefined': [/^undefined$/, '&bottom;'] # ⊥
-  # punctuation
+  ## punctuation
   '...': [/^(\)?)\.\.\.(\(?)$/, '&hellip;'] # …
   '..': [/^(\)?)\.\.(\(?)$/, '&nldr;'] # ‥
   '::': [/\:\:/, '&Colon;'] # ∷
-  # sets
+  ## sets
   in: [/^in$/, '&isin;'] # ∈
 
 # converts a list of names to a list of pattern/glyph pairs
