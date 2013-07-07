@@ -6,6 +6,7 @@ content_scripts:
   - matches:
       - https://*.github.com/*
     js:
-      - jquery.min.js
-      - lodash.min.js
-      - javascripts/pretty.js
+      - jquery.js
+      - jquery.fakeReplace.js
+      - lodash.js
+      - pretty.js

@@ -1,39 +1,48 @@
 module.exports = (grunt) ->
-  Tusk = require 'grunt-tusk'
-  tusk = new Tusk grunt
+  prod = if process.env['ENV'] == 'prod' then true else false
 
-  prod = if tusk.env.current == 'production' then true else false
+  require('matchdep').filterDev('grunt-*').forEach grunt.loadNpmTasks
 
-  tusk.coffee.add 'pretty.js', [
-    'app/coffee/preprocess.coffee'
-    'app/coffee/patterns.coffee'
-    'app/coffee/mapping.coffee'
-    'app/coffee/pretty.coffee'
-  ], wrap: null
-  tusk.uglify.add 'pretty.js', ['pretty.js'] if prod
-  tusk.copy.add '', 'app/images'
-  tusk.copy.add '', 'app/lib'
+  grunt.initConfig
+    pkg: grunt.file.readJSON 'package.json'
+    meta:
+      env: if prod then 'prod' else 'dev'
+      prod: '<%= meta.env %>' == 'prod'
+      dev: '<%= meta.env %>' == 'dev'
+      src: 'src'
+      test: 'test'
+      target:
+        dir: 'build/<%= meta.env %>'
+        js: '<%= meta.target.dir %>/pretty.js'
+    clean: target: src: ['<%= meta.target.dir %>']
+    coffeelint:
+      src:
+        files: src: ['<%= meta.src %>/**/*.coffee']
+        options: max_line_length: level: 'warn'
+      gruntfile:
+        files: src: ['Gruntfile.coffee']
+        options: max_line_length: level: 'warn'
+    coffee:
+      src:
+        files: '<%= meta.target.js %>': [
+          '<%= meta.src %>/preprocess.coffee'
+          '<%= meta.src %>/patterns.coffee'
+          '<%= meta.src %>/mapping.coffee'
+          '<%= meta.src %>/pretty.coffee'
+        ]
+        options: bare: true
+    jshint: target: ['<%= meta.target.js %>']
+    yaml: target:
+      options:
+        space: if prod then 0 else 2
+      files:
+        '<%= meta.target.dir %>/manifest.json':
+          ['<%= meta.src %>/manifest.yml']
+    copy: all:
+      files:
+        '<%= meta.target.dir %>/icon.png': ['src/icon.png']
+        '<%= meta.target.dir %>/jquery.js': ['components/jquery/jquery.js']
+        '<%= meta.target.dir %>/jquery.fakeReplace.js' : ['components/jquery.fakeReplace/jquery.fakeReplace.js']
+        '<%= meta.target.dir %>/lodash.js' : ['components/lodash/lodash.js']
 
-  (yaml_config = {})[tusk.env.current] =
-    options:
-      space: if prod then 0 else 2
-    files: [{
-      expand: true
-      cwd: 'app/yaml/'
-      src: ['**/*.yml']
-      dest: "build/#{if prod then 'production' else 'dev'}/"
-    }]
-
-  (clean_config = {})[tusk.env.current] =
-    src: "build/#{if prod then 'production' else 'dev'}/"
-
-  config = tusk.getConfig()
-  config['yaml'] = yaml_config
-  config['clean'] = clean_config
-
-  grunt.initConfig config
-
-  grunt.loadNpmTasks 'grunt-contrib-clean'
-  grunt.loadNpmTasks 'grunt-yaml'
-
-  grunt.registerTask 'build', ['tusk', 'yaml']
+  grunt.registerTask 'build', ['coffeelint', 'coffee', 'copy', 'yaml']

@@ -1,6 +1,7 @@
 # Pretty Github Chrome Extension
 
-[![Dependency Status](https://gemnasium.com/akatov/pretty-github.png)](https://gemnasium.com/akatov/pretty-github) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akatov/pretty-github/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Dependency Status](https://gemnasium.com/akatov/pretty-github.png)](https://gemnasium.com/akatov/pretty-github)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/akatov/pretty-github/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 A prettifier for source code on github, along the lines of
 [pretty-mode-plus](https://github.com/akatov/pretty-mode-plus).
@@ -13,6 +14,7 @@ This extension requires [node](https://github.com/joyent/node) v0.8 or later.
 git clone git@github.com:akatov/pretty-github.git
 cd pretty-github
 npm install
+bower install
 ```
 
 ## Development
@@ -29,7 +31,7 @@ and select the `build/dev` subdirectory of your current directory.
 
 ```bash
 npm install
-ENV=production grunt build
+ENV=prod grunt build
 ```
 
 ## Contributing
