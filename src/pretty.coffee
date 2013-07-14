@@ -16,11 +16,12 @@ $ ->
             for selector, pats of sels_pats
               for pat in pats
                 [pattern, glyph] = pat
-                $("#{lang_selector} span.#{selector}").fakeReplace (src) ->
+                $("#{lang_selector} span.#{selector}").fakeReplace((src) ->
                   src.replace pattern, (match, a, b) ->
                     ret = "<span title=\"#{match}\">#{glyph}</span>"
                     if (typeof a == 'string') && (typeof b == 'string')
                       "#{a}#{ret}#{b}"
                     else
                       ret
+                , '#files .data')
   , 500
