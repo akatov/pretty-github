@@ -42,7 +42,6 @@ module.exports = (grunt) ->
       files:
         '<%= meta.target.dir %>/icon.png': ['src/icon.png']
         '<%= meta.target.dir %>/jquery.js': ['components/jquery/jquery.js']
-        '<%= meta.target.dir %>/jquery.fakeReplace.js' : ['components/jquery.fakeReplace/jquery.fakeReplace.js']
         '<%= meta.target.dir %>/lodash.js' : ['components/lodash/lodash.js']
 
   grunt.registerTask 'build', ['coffeelint', 'coffee', 'copy', 'yaml']

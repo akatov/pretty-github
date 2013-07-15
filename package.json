@@ -1,5 +1,5 @@
 { "name": "pretty-github"
-, "version": "0.0.0"
+, "version": "0.0.0-SNAPSHOT"
 , "description": "Github source code prettifying Chrome extension"
 , "homepage": "https://github.com/akatov/pretty-github"
 , "repository":
