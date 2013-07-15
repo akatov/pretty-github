@@ -1,6 +1,7 @@
 patterns =
   ## arithmetic
   '++': [/^\+\+/, '&#x29fa;'] # ⧺
+  sqrt: [/^( *)sqrt( *)$/, '&radic;']
   ## arrows
   '->': [/-&gt;$/, '&rarr;'] # →
   '->>': [/-&gt;&gt;$/, '&Rarr;'] # → # TODO!
@@ -13,8 +14,8 @@ patterns =
   '>>>': [/&gt;&gt;&gt;$/, '&Gg;'] # ⋙
   '<<<': [/&lt;&lt;&lt;$/, '&Ll;'] # ⋘
   '<=>': [/^&lt;=&gt;$/, '&leg;'] # ⋚
-  '>=': [/^&gt;=$/, '&ge;'] # ≥
-  '<=': [/^&lt;=$/, '&le;'] # ≤
+  '>=': [/^( *)&gt;=( *)$/, '&ge;'] # ≥
+  '<=': [/^( *)&lt;=( *)$/, '&le;'] # ≤
   ## equality
   ':=': [/^:=$/, '&colone;'] # ≔
   '!=': [/^!=$/, '&ne;'] # ≠
@@ -26,14 +27,14 @@ patterns =
   '!~': [/^!\~$/, '&ncong;'] # ≇
   ## function
   function: [/^function/, '&lambda;'] # λ
-  lambda: [/^lambda$/, '&lambda;'] # λ
+  lambda: [/^( *)lambda( *)$/, '&lambda;'] # λ
   ## logic
   '&&': [/^&amp;&amp;$/, '&and;'] # ∧
   '||': [/^\|\|$/, '&or;'] # ∨
   '!': [/^!$/, '&not;'] # ¬
   and: [/^and$/, '&and;'] # ∧
   or: [/^or$/, '&or;'] # ∨
-  not: [/^not$/, '&not;'] # ¬
+  not: [/^( *)not( *)$/, '&not;'] # ¬
   ## constants
   nil: [/^nil$/, '&empty;'] # ∅
   null: [/^null$/, '&empty;'] # ∅

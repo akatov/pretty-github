@@ -61,7 +61,34 @@ mapping =
   # 'common-lisp':
   # d:
   # dart:
-  # 'emacs-lisp':
+  'emacs-lisp':
+    arithmetic:
+      nf: names ['sqrt']
+      nb: names ['sqrt']
+    ordering:
+      nb: common.ordering
+      nf: common.ordering
+    logic:
+      nf: [
+        patterns['not']
+        [/^( *)and( *)$/, '&Wedge;']
+        [/^( *)or( *)$/, '&Vee;']
+      ]
+      k: [
+        [/^( *)and( *)$/, '&Wedge;']
+        [/^( *)or( *)$/, '&Vee;']
+      ]
+      nb: names ['not']
+    sets: nf: [
+      [/^intersection$/, '&cap;']
+      [/^cl-intersection$/, '&cap;']
+      [/^union$/, '&cup;']
+      [/^cl-union$/, '&cup;']
+    ]
+    lambda:
+      k: names ['lambda']
+      nf: names ['lambda']
+    nil: nv: names ['nil']
   # erlang:
   # 'f#':
   # fortran:
@@ -77,7 +104,7 @@ mapping =
   # groovy:
   haskell:
     arithmetic: n: [
-      [/^sqrt$/, '&radic;']
+      patterns['sqrt']
       [/^product$/, '&prod;']
       [/^sum/, '&sum;']
     ]
