@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/akatov/pretty-github.png?label=ready&title=Ready)](https://waffle.io/akatov/pretty-github)
 # Pretty Github Chrome Extension
 
 [![Dependency Status](https://img.shields.io/gemnasium/akatov/pretty-github.svg)](https://gemnasium.com/akatov/pretty-github)
