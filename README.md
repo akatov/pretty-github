@@ -3,7 +3,7 @@
 [![Dependency Status](https://img.shields.io/gemnasium/akatov/pretty-github.svg)](https://gemnasium.com/akatov/pretty-github)
 
 A prettifier for source code on github, along the lines of
-[pretty-mode-plus](https://github.com/akatov/pretty-mode-plus).
+[pretty-mode](https://github.com/akatov/pretty-mode).
 
 ## Installation
 
