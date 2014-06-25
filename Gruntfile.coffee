@@ -41,7 +41,7 @@ module.exports = (grunt) ->
     copy: all:
       files:
         '<%= meta.target.dir %>/icon.png': ['src/icon.png']
-        '<%= meta.target.dir %>/jquery.js': ['components/jquery/jquery.js']
-        '<%= meta.target.dir %>/lodash.js' : ['components/lodash/lodash.js']
+        '<%= meta.target.dir %>/jquery.js': ['bower_components/jquery/jquery.js']
+        '<%= meta.target.dir %>/lodash.js' : ['bower_components/lodash/lodash.js']
 
   grunt.registerTask 'build', ['coffeelint', 'coffee', 'copy', 'yaml']
