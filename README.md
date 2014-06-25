@@ -1,6 +1,6 @@
-[![Stories in Ready](https://badge.waffle.io/akatov/pretty-github.png?label=ready&title=Ready)](https://waffle.io/akatov/pretty-github)
 # Pretty Github Chrome Extension
 
+[![Stories in Ready](https://badge.waffle.io/akatov/pretty-github.png?label=ready&title=Ready)](https://waffle.io/akatov/pretty-github)
 [![Dependency Status](https://img.shields.io/gemnasium/akatov/pretty-github.svg)](https://gemnasium.com/akatov/pretty-github)
 
 A prettifier for source code on github, along the lines of
